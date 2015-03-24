@@ -1,0 +1,41 @@
+{
+    "name": "angular-nz-ird-number-validator",
+    "version": "0.2.0",
+    "homepage": "https://github.com/nikrolls/angular-nz-ird-number-validator",
+    "authors": [
+        "Nik Rolls <nik@rolls.cc>"
+    ],
+    "description": "Angular validator for NZ IRD numbers",
+    "main": "dist/angular-nz-ird-number-validator.min.js",
+    "keywords": [
+        "Angular",
+        "input",
+        "form",
+        "confirmation",
+        "ird",
+        "validation"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/nikrolls/angular-nz-ird-number-validator"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
+        }
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": ">=1.2.0 <2.0.0"
+    },
+    "devDependencies": {
+        "angular-mocks": ">=1.2.0 <2.0.0"
+    }
+}

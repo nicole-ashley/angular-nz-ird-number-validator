@@ -1,0 +1,56 @@
+{
+  "name": "angular-nz-ird-number-validator",
+  "version": "0.2.0",
+  "homepage": "https://github.com/nikrolls/angular-nz-ird-number-validator",
+  "description": "Angular validator for NZ IRD numbers",
+  "main": "./dist/angular-nz-ird-number-validator.min.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nikrolls/angular-nz-ird-number-validator"
+  },
+  "keywords": [
+    "Angular",
+    "input",
+    "form",
+    "confirmation",
+    "match",
+    "validation"
+  ],
+  "author": [
+    "Nik Rolls <nik@rolls.cc>"
+  ],
+  "maintainers": [
+    {
+      "name": "Nik Rolls",
+      "web": "https://github.com/nikrolls"
+    }
+  ],
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "chai": "1.10.0",
+    "gulp": "^3.8.8",
+    "gulp-bump": "~0.1.0",
+    "gulp-karma": "0.0.4",
+    "gulp-ng-annotate": "^0.3.3",
+    "gulp-sequence": "^0.3.1",
+    "gulp-uglifyjs": "^0.4.3",
+    "gulp-wrap": "^0.3.0",
+    "karma": "^0.12.21",
+    "karma-chai-sinon": "^0.1.4",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-mocha": "~0.1",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-script-launcher": "~0.1.0",
+    "sinon": "^1.12.1",
+    "sinon-chai": "^2.6.0"
+  }
+}
