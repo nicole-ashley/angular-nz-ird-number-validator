@@ -27,9 +27,11 @@ describe('Directives: validation - nzIrdNumber', function () {
 
         describe('configuration:', function () {
 
-            it('does not throw when no ngModel controller is found', function () {
+            it('throws an error when no ngModel controller is found', function () {
                 var naTemplate = '<div nz-ird-number></div>';
-                compiled = $compile(naTemplate)($scope);
+                var compile = function() {
+                    $compile(naTemplate)($scope);
+                };
                 $scope.$digest();
             });
 
@@ -57,6 +59,13 @@ describe('Directives: validation - nzIrdNumber', function () {
             it('returns true if no model value has been defined', function () {
                 compiled = $compile(validTemplate)($scope);
                 expect($scope.irdNumber).to.be.undefined();
+                $scope.$digest();
+                expect(compiled.hasClass('ng-valid')).to.be.true();
+            });
+            
+            it('returns true if the model value is an empty string', function () {
+                compiled = $compile(validTemplate)($scope);
+                $scope.irdNumber = '';
                 $scope.$digest();
                 expect(compiled.hasClass('ng-valid')).to.be.true();
             });

@@ -6,19 +6,12 @@ angular.module('validation.nzIrdNumber').directive('nzIrdNumber', nzIrdNumber);
 
 function nzIrdNumber() {
     return {
-        require: '?ngModel',
+        require: 'ngModel',
         restrict: 'A',
-        link: function (scope, elem, attrs, ctrl, undefined) {
-            if (!ctrl) {
-                if (console && console.warn) {
-                    console.warn('IRD number validation requires ngModel to be on the element');
-                }
-                return;
-            }
-
+        link: function (scope, elem, attrs, ctrl) {
             // Written according to the specs at http://www.ird.govt.nz/software-developers/software-dev-specs/
             ctrl.$validators.nzIrdNumber = function () {
-                if(ctrl.$viewValue === undefined) {
+                if(typeof ctrl.$viewValue === 'undefined' || ctrl.$viewValue === '') {
                     // No validation for an undefined model value
                     return true;
                 }

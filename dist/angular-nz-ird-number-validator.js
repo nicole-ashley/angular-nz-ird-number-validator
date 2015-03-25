@@ -1,7 +1,7 @@
 /*!
  * angular-nz-ird-number-validator
  * Angular validator for NZ IRD numbers
- * @version v0.1.0
+ * @version v0.2.0
  * @link https://github.com/nikrolls/angular-nz-ird-number-validator
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -13,19 +13,12 @@ angular.module('validation.nzIrdNumber').directive('nzIrdNumber', nzIrdNumber);
 
 function nzIrdNumber() {
     return {
-        require: '?ngModel',
+        require: 'ngModel',
         restrict: 'A',
-        link: function (scope, elem, attrs, ctrl, undefined) {
-            if (!ctrl) {
-                if (console && console.warn) {
-                    console.warn('IRD number validation requires ngModel to be on the element');
-                }
-                return;
-            }
-
+        link: function (scope, elem, attrs, ctrl) {
             // Written according to the specs at http://www.ird.govt.nz/software-developers/software-dev-specs/
             ctrl.$validators.nzIrdNumber = function () {
-                if(ctrl.$viewValue === undefined) {
+                if(typeof ctrl.$viewValue === 'undefined' || ctrl.$viewValue === '') {
                     // No validation for an undefined model value
                     return true;
                 }
