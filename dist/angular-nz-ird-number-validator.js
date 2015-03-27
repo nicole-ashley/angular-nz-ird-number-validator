@@ -1,7 +1,7 @@
 /*!
  * angular-nz-ird-number-validator
  * Angular validator for NZ IRD numbers
- * @version v0.2.0
+ * @version v0.3.1
  * @link https://github.com/nikrolls/angular-nz-ird-number-validator
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */

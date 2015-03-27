@@ -23,7 +23,7 @@ describe('Directives: validation - nzIrdNumber', function () {
 
     describe('Directive level validation', function () {
 
-        var validTemplate = '<input ng-model="irdNumber" nz-ird-number></input>';
+        var validTemplate = '<input ng-model="irdNumber" nz-ird-number/>';
 
         describe('configuration:', function () {
 
@@ -77,28 +77,23 @@ describe('Directives: validation - nzIrdNumber', function () {
                 expect(compiled.hasClass('ng-valid')).to.be.true();
             });
 
-            var i;
-            for (i = 0; i < suppliedValidValues.length; i++) {
-                (function (testValue) {
-                    it('returns true on valid value ' + testValue, function () {
-                        compiled = $compile(validTemplate)($scope);
-                        $scope.irdNumber = testValue;
-                        $scope.$digest();
-                        expect(compiled.hasClass('ng-valid')).to.be.true();
-                    });
-                })(suppliedValidValues[i]);
-            }
+            suppliedValidValues.forEach(function(testValue) {
+                it('returns true on valid value ' + testValue, function () {
+                    compiled = $compile(validTemplate)($scope);
+                    $scope.irdNumber = testValue;
+                    $scope.$digest();
+                    expect(compiled.hasClass('ng-valid')).to.be.true();
+                });
+            });
 
-            for (i = 0; i < suppliedInvalidValues.length; i++) {
-                (function (testValue) {
-                    it('returns false on invalid value ' + testValue, function () {
-                        compiled = $compile(validTemplate)($scope);
-                        $scope.irdNumber = testValue;
-                        $scope.$digest();
-                        expect(compiled.hasClass('ng-valid')).to.be.false();
-                    });
-                })(suppliedInvalidValues[i]);
-            }
+            suppliedInvalidValues.forEach(function(testValue) {
+                it('returns false on invalid value ' + testValue, function () {
+                    compiled = $compile(validTemplate)($scope);
+                    $scope.irdNumber = testValue;
+                    $scope.$digest();
+                    expect(compiled.hasClass('ng-valid')).to.be.false();
+                });
+            });
 
         });
 
@@ -114,7 +109,7 @@ describe('Directives: validation - nzIrdNumber', function () {
         beforeEach(function () {
             element = angular.element(
                 '<form name="form">' +
-                '<input type="text" ng-model="test" name="test" nz-ird-number></input>' +
+                '  <input type="text" ng-model="test" name="test" nz-ird-number/>' +
                 '</form>'
             );
             $scope.test = inputValue;

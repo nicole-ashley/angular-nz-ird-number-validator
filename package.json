@@ -1,6 +1,6 @@
 {
   "name": "angular-nz-ird-number-validator",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/nikrolls/angular-nz-ird-number-validator",
   "description": "Angular validator for NZ IRD numbers",
   "main": "./dist/angular-nz-ird-number-validator.min.js",
